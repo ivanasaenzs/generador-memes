@@ -1,0 +1,241 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: #30343F;
+    overflow-x: hidden;
+}
+
+.is-flex {
+    display: flex;
+}
+
+.hidden {
+    display: none;
+}
+
+/* MODO OSCURO  */
+.header-title {
+    background-color: #191e2b;
+    color: #fff;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.buttons-container {
+    background-color: #191e2b;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 18px;
+    padding-bottom: 15px;
+}
+
+.buttons-container button {
+    color: #fff;
+    margin-right: 12px;
+    background: none;
+    border: none;
+} 
+
+.fa-file-image, .fa-font, .fa-lightbulb {
+    color: #fff;
+    margin-right: 4px;
+}
+
+.meme-main-container { 
+    height: 610px;
+    width: 610px;
+    margin: 0 auto;
+}
+
+/* MEME  */
+.meme-image-container {
+    background-color: #000;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    background-size: cover; 
+    background-repeat: 'no-repeat';
+    background-position: 'center';
+}
+
+.meme-text {
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+    text-align: center;
+    padding: 25px;
+}
+
+.centered-text {
+    padding-top: 42px
+}
+
+/* ASIDE(s) */
+ h2 {
+    text-align: center;
+    margin: 30px 0 20px;
+ }
+
+ .close-button {
+    background: none;
+    border: none;
+    font-size: 15px;
+    text-align: center;
+}
+
+.aside-image-section {
+    background-color: #252935;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100vh;
+}
+
+.image-url-container {
+    margin-bottom: 15px;
+}
+
+
+h3, .filters-control-range, .reset-button {
+    margin-left: 8px;
+    margin-bottom: 10px;
+}
+
+.url-input {
+    border: none;
+    border-radius: 3px;
+}
+
+/* .url-input:hover {
+   background-color: #BDBDBD;
+} */
+
+.color-input {
+    height: 30px;
+    width: 30px;
+    border-radius: 12%;
+}
+
+.range-color {
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+
+.url-input, .meme-color, .range-color {
+    background-color: #393e49;
+    margin-left: 8px;
+}
+
+.meme-color, .meme-color-values {
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+.meme-color-values, .reset-button {
+    border: none;
+    background-color: #393e49;
+    color: #fff;
+}
+
+.reset-button {
+    border-radius: 3px;
+    margin-top: 16px;
+    padding: 12px;
+}
+
+.aside-text-section {
+    background-color: #252935;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100vh;
+    z-index: -1;
+}
+
+.image-filters {
+    margin-top: 40px;
+}
+
+.filters-control-range {
+    display: flex;
+    flex-direction: column;
+}
+
+
+ .text-color {
+    margin-right: 10px;
+} 
+
+/* BOTÓN DE DESCARGA */
+.download-container {
+    justify-content: center;
+    align-items: center;
+}
+
+.download-button {
+    background-color: #2e7d32;
+    color: #fff;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border: none;
+    border-radius: 3px;
+    padding: 15px 30px;
+}
+
+.fa-download {
+    margin-right: 8px;
+}
+
+/* MODO CLARO */
+.header-title-light {
+    background-color: #D4A276;
+    color: #7F5539;  
+    text-align: center;
+    padding-top: 10px;
+}
+
+.buttons-container-light {
+    background-color: #D4A276; 
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 18px;
+    padding-bottom: 15px;
+}
+
+.buttons-container-light button {
+    color: #7F5539;  
+    margin-right: 12px;
+    background: none;
+    border: none;
+}
+
+.aside-image-section-light {
+    background-color: #e7bc91;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 240px;
+    height: 100vh;
+}
+
+.aside-text-section-light {
+    background-color: #e7bc91;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 240px;
+    z-index: -1;
+    height: 100vh;
+} 

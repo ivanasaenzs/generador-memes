@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Generador de Memes</title>
+    <script src="https://kit.fontawesome.com/085ccf50a5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1 class="header-title">Generador de Memes</h1>
+        <div class="buttons-container is-flex">
+             <button id="image-section-button"><i class="fa-solid fa-file-image"></i>
+                Imagen
+             </button>
+             <button id="text-section-button"><i class="fa-solid fa-font"></i>
+                Texto
+             </button>
+             <button id="light-mode-button"><i class="fa-regular fa-lightbulb"></i>
+                Modo claro
+             </button>
+             <button class="hidden" id="dark-mode-button"><i class="fa-regular fa-lightbulb"></i>
+                Modo oscuro
+             </button>
+            </div>
+    </header>
+        <main> 
+            <div class="meme-main-container">
+            <div class="meme-image-container is-flex">
+                <div class="meme-text centered-text" id="top-text">TOP TEXT</div>
+                <div class="meme-text centered-text" id="bottom-text">BOTTOM TEXT</div>
+            </div>
+        </div>
+        </main>
+        <!-- ASIDE(s)-->
+        <aside>
+               <!-- ASIDE: IMAGEN-->
+            <section class="aside-image-section">
+                <button class="close-button hidden" id="close-button-image"><i class="fa-solid fa-xmark"></i></button>
+                <h2>IMAGEN</h2>
+                <!-- IMAGEN URL -->
+                <div class="image-url-container">
+                    <h3 class="url-title">URL</h3>
+                    <input type="url" class="url-input" id="url-input" required>
+                </div>
+                <!-- IMAGEN FONDO -->
+                    <h3>FONDO</h3>
+                       <div class="meme-background is-flex">
+                        <div class="meme-color">
+                    <input type="color" class="color-input" id="color-input" value="#FFFFFF">
+                    <span id="image-color-value">#FFFFFF</span>
+                    </div>
+                    <select name="" class="meme-color-values" id="">
+                        <option value="ninguno">Ninguno</option>
+                        <option value="aclarar">Aclarar</option>
+                        <option value="oscurecer">Oscurecer</option>
+                        <option value="diferencia">Diferencia</option>
+                        <option value="luminosidad">Luminosidad</option>
+                        <option value="multiplicar">Multiplicar</option>
+                    </select>
+        </div>
+            <!-- IMAGEN FILTROS -->
+       <div class="image-filters">
+        <h3>FILTROS</h3>
+<div class="filters-control-range">
+  <label for="bright-input">BRILLO</label>
+  <input type="range" id="bright-input" class="range-color" min="0" max="1" step="0.1">
+</div>
+<div class="filters-control-range">
+    <label for="opacity-input">OPACIDAD</label>
+    <input type="range" id="opacity-input" class="range-color" min="0" max="1" step="0.1">
+</div>
+<div class="filters-control-range">
+    <label for="contrast-input">CONTRASTE</label>
+    <input type="range" id="contrast-input" class="range-color" min="0" max="1" step="0.1">
+</div>
+<div class="filters-control-range">
+    <label for="">DESENFOQUE</label>
+    <input type="range" id="" class="range-color" min="0" max="1" step="0.1">
+</div>
+<div class="filters-control-range">
+    <label for="">ESCALA DE GRISES</label>
+    <input type="range" id="" class="range-color" min="0" max="1" step="0.1">
+</div>
+<div class="filters-control-range">
+    <label for="">SEPIA</label>
+    <input type="range" id="" class="range-color" min="0" max="1" step="0.1">
+</div>
+<div class="filters-control-range">
+    <label for="">HUE</label>
+    <input type="range" id="" class="range-color" min="0" max="1" step="0.1">
+</div>
+<div class="filters-control-range">
+    <label for="">SATURADO</label>
+    <input type="range" id="" class="range-color" min="0" max="1" step="0.1">
+</div>
+<div class="filters-control-range">
+    <label for="">NEGATIVO</label>
+    <input type="range" id="" class="range-color" min="0" max="1" step="0.1">
+</div>
+       </div>
+          <!-- BOTÓN REESTABLECER -->
+          <button type="reset" class="reset-button" id="reset-button">Reestablecer filtros</button>
+       </section>
+       <!-- ASIDE: TEXTO -->
+       <section class="aside-text-section">
+        <button class="close-button hidden" id="close-button-text"><i class="fa-solid fa-xmark"></i></button>
+        <h2>TEXTO</h2>
+        <!-- TEXTO SUPERIOR-->
+       <div>
+        <h3>SUPERIOR</h3>
+        <textarea class="top-text" id="area-top-text">TOP TEXT</textarea>
+        <div>
+            <input type="checkbox" id="no-top-text">
+            <label for="no-top-text">Sin texto superior</label>
+           </div>
+       </div>
+       <!-- TEXTO INFERIOR -->
+       <div>
+        <h3>INFERIOR</h3>
+        <textarea class="bottom-text" id="area-bottom-text">BOTTOM TEXT</textarea>
+        <div>
+            <input type="checkbox" id="no-bottom-text">
+            <label for="no-bottom-text">Sin texto inferior</label>
+           </div>
+       </div>
+       <!-- FUENTE TEXTO -->
+       <div>
+        <h3>FUENTE</h3>
+        <select name="" class="" id="">
+            <option value="Arial">Arial</option>
+            <option value="Arial Black">Arial Black</option>
+            <option value="American Typewriter">American Typewriter</option>
+            <option value="Andale Mono">Andale Mono</option>
+            <option value="Comic Sans MS">Comic Sans MS</option>
+            <option value="Helvetica">Helvetica</option>
+            <option value="Impact" selected>Impact</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Times New Roman">Times New Roman</option>
+        </select>
+          <!-- TAMAÑO DE FUENTE -->
+       <div class="size-alignment is-flex">
+      <input type="number" class="" id="" min="10" max="50" value="40">
+       <!-- ALINEACIÓN DE TEXTO -->
+       <div>
+         <button class="" id="" aria-label=""><i class="fa-solid fa-align-left"></i></button>
+         <button class="" id="" aria-label=""><i class="fa-solid fa-align-center"></i></button>
+         <button class="" id="" aria-label=""><i class="fa-solid fa-align-right"></i></button>
+       </div>
+       </div>
+    </div>
+    <!-- COLOR -->
+    <div class="is-flex text-colors">
+          <!-- COLOR DE TEXTO -->
+        <div class="text-color">
+            <h3>COLOR</h3>
+                  <input type="color" name="" value="#000000" aria-label="" class="" id="">
+                  <span id="text-color-value" aria-hidden=""></span>
+        </div>
+        <!-- COLOR DE FONDO -->
+        <div class="text-background-color">
+         <h3>FONDO</h3>
+            <input type="color" name="" value="#FFFFFF" aria-label="" id="">
+            <span class="" id="" aria-hidden="">#</span>
+        </div>
+    </div>
+    <!-- CONTORNO -->
+    <div>
+    <h3>CONTORNO</h3>
+    <div>
+        <button class="" id="">Ninguno</button>
+        <button class="" id="">Claro</button>
+        <button class="" id="">Oscuro</button>
+    </div>
+    </div>
+    <!-- ESPACIADO -->
+    <div>
+        <h3>PADDING</h3>
+        <input type="number" id="" min="10" max="50" value="30">
+    </div>
+    <!-- INTERLINEADO -->
+    <div>
+ <h3>INTERLINEADO</h3>
+ <select class="" id="" aria-label="">
+    <option value="0.8" selected>0.8</option>
+    <option value="1">1</option>
+    <option value="1.2">1.2</option>
+    <option value="1.5">1.5</option>
+    <option value="2">2</option>
+    <option value="2.5">2.5</option>
+ </select>
+    </div>
+       </section>
+        </aside>
+        <div class="download-container is-flex hidden">
+    <button class="download-button" id="download-button"><i class="fa-solid fa-download"></i>Descargar meme</button>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
