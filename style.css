@@ -5,7 +5,6 @@
 
 body {
     background-color: #30343F;
-    overflow-x: hidden;
 }
 
 .is-flex {
@@ -14,6 +13,12 @@ body {
 
 .hidden {
     display: none;
+}
+
+.control-input, .text-button {
+    background-color: #393e49;
+    color: #fff;
+    border: none;
 }
 
 /* MODO OSCURO  */
@@ -44,13 +49,13 @@ body {
     margin-right: 4px;
 }
 
+/* MEME  */
 .meme-main-container { 
     height: 610px;
     width: 610px;
     margin: 0 auto;
 }
 
-/* MEME  */
 .meme-image-container {
     background-color: #000;
     height: 100%;
@@ -94,13 +99,12 @@ body {
     top: 0;
     right: 0;
     width: 250px;
-    height: 100vh;
+    height: 100vh; 
 }
 
 .image-url-container {
     margin-bottom: 15px;
 }
-
 
 h3, .filters-control-range, .reset-button {
     margin-left: 8px;
@@ -108,48 +112,56 @@ h3, .filters-control-range, .reset-button {
 }
 
 .url-input {
-    border: none;
     border-radius: 3px;
+    margin-left: 8px;
+    width: 90%;
+    height: 23px;
 }
-
-/* .url-input:hover {
-   background-color: #BDBDBD;
-} */
 
 .color-input {
-    height: 30px;
-    width: 30px;
-    border-radius: 12%;
+    height: 35px;
+    width: 35px;
 }
+
+.color-input::-webkit-color-swatch {
+    border-radius: 15px;
+    border: none;
+  }
 
 .range-color {
     appearance: none;
-    width: 100%;
+    width: 90%;
     height: 8px;
     border-radius: 8px;
     margin-top: 5px;
 }
 
-.url-input, .meme-color, .range-color {
-    background-color: #393e49;
+.meme-color, .range-color {
     margin-left: 8px;
 }
 
-.meme-color, .meme-color-values {
+.meme-color {
+    background-color: #393e49;
     margin-right: 10px;
     border-radius: 3px;
 }
 
-.meme-color-values, .reset-button {
-    border: none;
+.reset-button {
     background-color: #393e49;
     color: #fff;
-}
-
-.reset-button {
+    border: none;
     border-radius: 3px;
     margin-top: 16px;
     padding: 12px;
+}
+
+.image-filters {
+    margin-top: 40px;
+}
+
+.filters-control-range {
+    display: flex;
+    flex-direction: column;
 }
 
 .aside-text-section {
@@ -163,19 +175,23 @@ h3, .filters-control-range, .reset-button {
     z-index: -1;
 }
 
-.image-filters {
-    margin-top: 40px;
+.top-text {
+    background-color: #393e49;
+    color: #fff;
+    border: none;
 }
 
-.filters-control-range {
-    display: flex;
-    flex-direction: column;
+.bottom-text {
+    background-color: #393e49;
+    color: #fff;
+    border: none;
 }
 
-
- .text-color {
-    margin-right: 10px;
-} 
+.text-background-color, .text-color {
+    background-color: #393e49;
+    margin-right: 6px;
+    border-radius: 3px;
+}
 
 /* BOTÓN DE DESCARGA */
 .download-container {
@@ -226,8 +242,17 @@ h3, .filters-control-range, .reset-button {
     position: absolute;
     top: 0;
     right: 0;
-    width: 240px;
+    width: 250px;
     height: 100vh;
+}
+
+.reset-button-light {
+    background-color: #ffedd8;
+    color: #000;
+    border: none;
+    border-radius: 3px;
+    margin-top: 16px;
+    padding: 12px;
 }
 
 .aside-text-section-light {
@@ -239,3 +264,34 @@ h3, .filters-control-range, .reset-button {
     z-index: -1;
     height: 100vh;
 } 
+
+.top-text-light {
+    background-color: #ffedd8;
+    color: #000;
+    border: none;
+}
+
+.bottom-text-light {
+    background-color: #ffedd8;
+    color: #000;
+    border: none;
+}
+
+.control-input-light, .text-button-light {
+    background-color: #ffedd8;
+    color: #000;
+    border: none;
+}
+
+.meme-color-light {
+    background-color: #ffedd8;
+    margin-right: 10px;
+    margin-left: 8px;
+    border-radius: 3px;
+}
+
+.text-background-color-light, .text-color-light {
+    background-color: #ffedd8;
+    margin-right: 6px;
+    border-radius: 3px;
+}
