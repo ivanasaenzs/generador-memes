@@ -232,13 +232,29 @@ fontSelector.addEventListener('change', () => {
 });
 
 // Input tamaño de fuente 
-// const memeText = document.querySelectorAll('.meme-text');
+const memeText = document.querySelectorAll('.meme-text');
+// memeText[0]
+// memeText[1]
 
 // fontSizeInput.addEventListener('input', () => {;
 //    topTextMeme.style.fontSize = `${fontSizeInput.value}` + `px`;
 // })
 
-// Botones alineación
+// Botones alineación del texto
+alignLeft.addEventListener('click', () => {
+    topTextMeme.style.textAlign = 'left';
+    bottomTextMeme.style.textAlign = 'left';
+});
+
+alignCenter.addEventListener('click', () => {
+    topTextMeme.style.textAlign = 'center';
+    bottomTextMeme.style.textAlign = 'center';
+});
+
+alignRight.addEventListener('click', () => {
+    topTextMeme.style.textAlign = 'right';
+    bottomTextMeme.style.textAlign = 'right';
+});
 
 // Color de fuente
 const fontColorInput = document.getElementById('font-color');
