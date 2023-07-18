@@ -1,4 +1,3 @@
-// MODO OSCURO-CLARO
 const lightMode = document.getElementById('light-mode-button');
 const darkMode = document.getElementById('dark-mode-button');
 const body = document.querySelector('body');
@@ -9,6 +8,7 @@ const textSectionButton = document.getElementById('text-section-button');
 const imageAside = document.querySelector('.aside-image-section');
 const urlInput = document.getElementById('url-input');
 const memeImage = document.querySelector('.meme-image-container');
+const meme = document.getElementById('meme-image-container');
 const inputColors = document.getElementById('color-input');
 const imageColorValue = document.getElementById('image-color-value');
 const textAside = document.querySelector('.aside-text-section');
@@ -20,11 +20,22 @@ const bottomTextFunctionality = document.getElementById('bottom-text');
 const textAreaBottom = document.getElementById('area-bottom-text');
 const imageBackgroundContainer = document.querySelector('.meme-color');
 const blendModeSelector = document.getElementById('blend-mode-selector');
-const fontSizeSection = document.getElementById('font-size');
+const fontColorContainer = document.getElementById('text-color');
+const fontColor = document.getElementById('font-color');
+const fontBackgroundColorContainer = document.getElementById('text-background-color');
+const fontBackgroundColor = document.getElementById('font-background-color');
+const fontSizeInput = document.getElementById('font-size');
+const alignLeft = document.getElementById('text-align-left-button');
+const alignCenter = document.getElementById('text-align-center-button');
+const alignRight = document.getElementById('text-align-right-button');
+const noOutline = document.getElementById('no-outline-button');
+const lightOutline = document.getElementById('light-outline-button');
+const darkOutline = document.getElementById('dark-outline-button');
 const paddingInput = document.getElementById('padding-input');
 const lineHeightInput = document.getElementById('line-height-input');
 const resetButton = document.querySelector('.reset-button');
 
+// MODO OSCURO-CLARO
 // Botones modo claro y modo oscuro
 lightMode.addEventListener('click', () => {
     lightMode.style.display = 'none';
@@ -52,8 +63,28 @@ lightMode.addEventListener('click', () => {
     bottomText.classList.add('bottom-text-light');
     fontSelector.classList.remove('control-input');
     fontSelector.classList.add('control-input-light');
-    fontSizeSection.classList.remove('control-input');
-    fontSizeSection.classList.add('control-input-light');
+    fontSizeInput.classList.remove('control-input');
+    fontSizeInput.classList.add('control-input-light');
+    alignLeft.classList.remove('control-input');
+    alignLeft.classList.add('control-input-light')
+    alignCenter.classList.remove('control-input');
+    alignCenter.classList.add('control-input-light')
+    alignRight.classList.remove('control-input');
+    alignRight.classList.add('control-input-light')
+    fontColorContainer.classList.remove('text-color');
+    fontColorContainer.classList.add('text-color-light');
+    fontColor.classList.remove('text-color');
+    fontColor.classList.add('text-color-light');
+    fontBackgroundColorContainer.classList.remove('text-color');
+    fontBackgroundColorContainer.classList.add('text-color-light');
+    fontBackgroundColor.classList.remove('text-color');
+    fontBackgroundColor.classList.add('text-color-light');
+    noOutline.classList.remove('control-input');
+    noOutline.classList.add('control-input-light');
+    lightOutline.classList.remove('control-input');
+    lightOutline.classList.add('control-input-light');
+    darkOutline.classList.remove('control-input');
+    darkOutline.classList.add('control-input-light');
     paddingInput.classList.remove('control-input');
     paddingInput.classList.add('control-input-light');
     lineHeightInput.classList.remove('control-input');
@@ -88,8 +119,28 @@ darkMode.addEventListener('click', () => {
     bottomText.classList.add('bottom-text');
     fontSelector.classList.remove('control-input-light');
     fontSelector.classList.add('control-input');
-    fontSizeSection.classList.remove('control-input-light');
-    fontSizeSection.classList.add('control-input');
+    fontSizeInput.classList.remove('control-input-light');
+    fontSizeInput.classList.add('control-input');
+    alignLeft.classList.remove('control-input-light');
+    alignLeft.classList.add('control-input')
+    alignCenter.classList.remove('control-input-light');
+    alignCenter.classList.add('control-input')
+    alignRight.classList.remove('control-input-light');
+    alignRight.classList.add('control-input')
+    fontColorContainer.classList.remove('text-color-light');
+    fontColorContainer.classList.add('text-color');
+    fontColor.classList.remove('text-color-light');
+    fontColor.classList.add('text-color');
+    fontBackgroundColorContainer.classList.remove('text-color-light');
+    fontBackgroundColorContainer.classList.add('text-color');
+    fontBackgroundColor.classList.remove('text-color-light');
+    fontBackgroundColor.classList.add('text-color');
+    noOutline.classList.remove('control-input-light');
+    noOutline.classList.add('control-input');
+    lightOutline.classList.remove('control-input-light');
+    lightOutline.classList.add('control-input');
+    darkOutline.classList.remove('control-input-light');
+    darkOutline.classList.add('control-input');
     paddingInput.classList.remove('control-input-light');
     paddingInput.classList.add('control-input');
     lineHeightInput.classList.remove('control-input-light');
@@ -138,12 +189,13 @@ inputColors.addEventListener('input', () => {
 });
 
 // Blend mode select 
-const memeImageBlendMode = document.getElementById('meme-image-container');
-
 blendModeSelector.addEventListener('change', () => {
     const selectedOption = blendModeSelector.value;
-    memeImageBlendMode.style.mixBlendMode = `${selectedOption}`;
+    console.log(selectedOption);
+    meme.style.filter = `${selectedOption}`;
 })
+
+// Filtros 
 
 // ASIDE TEXTO
 // Checkboxes: sin texto superior/inferior
@@ -179,6 +231,15 @@ fontSelector.addEventListener('change', () => {
     bottomTextMeme.style.fontFamily = `${fontSelector.value}`;
 });
 
+// Input tamaño de fuente 
+// const memeText = document.querySelectorAll('.meme-text');
+
+// fontSizeInput.addEventListener('input', () => {;
+//    topTextMeme.style.fontSize = `${fontSizeInput.value}` + `px`;
+// })
+
+// Botones alineación
+
 // Color de fuente
 const fontColorInput = document.getElementById('font-color');
 const fontColorValue = document.getElementById('font-color-value')
@@ -207,9 +268,49 @@ fontBackgroundColorInput.addEventListener('input', () => {
     fontBackgroundColorValue.innerHTML = `<p>${displayFontBackgroundColorValue}</p>`;
 });
 
+// Checkbox fondo transparente
+const transparentBackground = document.getElementById('transparent-background');
+
+const makeBottomBackgroundTransparent = () => {
+ if (transparentBackground.checked) {
+    bottomTextMeme.style.backgroundColor = 'transparent';
+ } else {
+    bottomTextMeme.style.backgroundColor = '#fff';
+ }
+    }
+
+ const makeTopBackgroundTransparent = () => {
+        if (transparentBackground.checked) {
+           topTextMeme.style.backgroundColor = 'transparent';
+        } else {
+          topTextMeme.style.backgroundColor = '#fff';
+        }
+           }
+
+transparentBackground.addEventListener('change', () => makeBottomBackgroundTransparent());
+transparentBackground.addEventListener('change', () => makeTopBackgroundTransparent());
+
+// Contorno
+
+// Input Padding
+// const textSpan = document.getElementById('text-span');
+
+// paddingInput.addEventListener('input', () => {
+//     let paddingValue = paddingInput.value;
+//     memeText.style.padding = `${paddingValue}` + `px`;
+// });
+
+// const textSpan = document.getElementById('textSpan');
+
+// paddingInput.addEventListener('input', function() {
+//   var paddingValue = paddingInput.value;
+//   textSpan.style.padding = paddingValue + 'px';
+// });
+
+// Input Interlineado
+
 // BOTÓN DE DESCARGA
 const downloadButton = document.getElementById('download-button');
-const meme = document.getElementById('meme-image-container');
 
 downloadButton.addEventListener('click', () => {
     domtoimage.toBlob(meme).then(function (blob) {

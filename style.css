@@ -5,6 +5,7 @@
 
 body {
     background-color: #30343F;
+    font-family: "Open Sans", sans-serif;
 }
 
 .is-flex {
@@ -25,6 +26,8 @@ body {
 .header-title {
     background-color: #191e2b;
     color: #fff;
+    font-weight: 600;
+    font-size: 35px;
     text-align: center;
     padding-top: 10px;
 }
@@ -71,19 +74,30 @@ body {
     width: 100%;
     height: 100px;
     background-color: #fff;
+    font-size: 37px;
     text-align: center;
-    padding: 25px;
-}
-
-.centered-text {
-    padding-top: 42px
+    padding: 40px
 }
 
 /* ASIDE(s) */
  h2 {
+    font-size: 18px;
+    font-weight: 700;
     text-align: center;
     margin: 30px 0 20px;
  }
+
+ label {
+    font-size: 12px;
+    font-weight: 400;
+ }
+
+.aside-subtitle {
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
 
  .close-button {
     background: none;
@@ -107,7 +121,7 @@ body {
 }
 
 h3, .filters-control-range, .reset-button {
-    margin-left: 8px;
+    margin-left: 10px;
     margin-bottom: 10px;
 }
 
@@ -175,6 +189,10 @@ h3, .filters-control-range, .reset-button {
     z-index: -1;
 }
 
+.top-text-container, .bottom-text-container, .font-container, .outline-container, .padding-input, .line-height-input {
+    margin-left: 10px;
+}
+
 .top-text {
     background-color: #393e49;
     color: #fff;
@@ -187,10 +205,24 @@ h3, .filters-control-range, .reset-button {
     border: none;
 }
 
-.text-background-color, .text-color {
+ .text-color {
     background-color: #393e49;
+    margin-left: 10px;
     margin-right: 6px;
     border-radius: 3px;
+}
+
+.text-color-value {
+    font-size: 14px;
+}
+
+.font-size {
+    margin-right: 4px;
+}
+
+.transparent-background {
+    margin-top: 6px;
+    margin-left: 10px;
 }
 
 /* BOTÓN DE DESCARGA */
@@ -251,6 +283,7 @@ h3, .filters-control-range, .reset-button {
     color: #000;
     border: none;
     border-radius: 3px;
+    margin-left: 8px;
     margin-top: 16px;
     padding: 12px;
 }
@@ -290,8 +323,10 @@ h3, .filters-control-range, .reset-button {
     border-radius: 3px;
 }
 
-.text-background-color-light, .text-color-light {
+.text-color-light {
     background-color: #ffedd8;
+    border-radius: 3px;
+    margin-left: 10px;
     margin-right: 6px;
     border-radius: 3px;
 }
