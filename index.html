@@ -4,234 +4,239 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
-      integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
-      integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+        integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+        integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Generador de Memes</title>
     <script src="https://kit.fontawesome.com/085ccf50a5.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <h1 class="header-title">Generador de Memes</h1>
         <div class="buttons-container is-flex">
-             <button id="image-section-button"><i class="fa-solid fa-file-image"></i>
+            <button id="image-section-button"><i class="fa-solid fa-file-image"></i>
                 Imagen
-             </button>
-             <button id="text-section-button"><i class="fa-solid fa-font"></i>
+            </button>
+            <button id="text-section-button"><i class="fa-solid fa-font"></i>
                 Texto
-             </button>
-             <button id="light-mode-button"><i class="fa-regular fa-lightbulb"></i>
+            </button>
+            <button id="light-mode-button"><i class="fa-regular fa-lightbulb"></i>
                 Modo claro
-             </button>
-             <button class="hidden" id="dark-mode-button"><i class="fa-regular fa-lightbulb"></i>
+            </button>
+            <button class="hidden" id="dark-mode-button"><i class="fa-regular fa-lightbulb"></i>
                 Modo oscuro
-             </button>
-            </div>
+            </button>
+        </div>
     </header>
     <!-- INICIO DE MAIN -->
     <main class="main-container" id="main-container">
         <div class="meme-container" id="meme-container">
-          <div class="text-container top-text-meme" id="top-text-meme">TOP TEXT</div>
-          <div class="meme-image" id="meme-image"></div>
-          <div class="text-container bottom-text-meme" id="bottom-text-meme">BOTTOM TEXT</div>
+            <div class="text-container top-text-meme" id="top-text-meme">TOP TEXT</div>
+            <div class="meme-image" id="meme-image"></div>
+            <div class="text-container bottom-text-meme" id="bottom-text-meme">BOTTOM TEXT</div>
         </div>
-      </main>
-        <!--FIN DE MAIN -->
-        <!-- COMIENZO de ASIDE(s)-->
-        <aside>
-               <!-- ASIDE: IMAGEN-->
-            <section class="aside-image-section">
-                <button class="close-button hidden" id="close-button-image"><i class="fa-solid fa-xmark"></i></button>
-                <h2>IMAGEN</h2>
-                <!-- IMAGEN URL -->
-                <div class="image-url-container">
-                    <h3 class="aside-subtitle">URL</h3>
-                    <input type="url" class="control-input url-input" id="url-input" required>
-                </div>
-                <!-- IMAGEN FONDO -->
-                    <h3 class="aside-subtitle">FONDO</h3>
-                       <div class="meme-background-light is-flex">
-                        <div class="meme-color is-flex">
+    </main>
+    <!--FIN DE MAIN -->
+    <!-- COMIENZO de ASIDE(s)-->
+    <aside>
+        <!-- ASIDE: IMAGEN-->
+        <section class="aside-image-section">
+            <button class="close-button hidden" id="close-button-image"><i class="fa-solid fa-xmark"></i></button>
+            <h2>IMAGEN</h2>
+            <!-- IMAGEN URL -->
+            <div class="image-url-container">
+                <h3 class="aside-subtitle">URL</h3>
+                <input type="url" class="control-input url-input" id="url-input" required>
+            </div>
+            <!-- IMAGEN FONDO -->
+            <h3 class="aside-subtitle">FONDO</h3>
+            <div class="meme-background-light is-flex">
+                <div class="meme-color is-flex">
                     <input type="color" class="control-input color-input" id="color-input" value="#FFFFFF">
                     <span id="image-color-value">#FFFFFF</span>
-                    </div>
-                    <select class="control-input" id="blend-mode-selector">
-                        <option value="normal">Normal</option>
-                        <option value="lighten">Aclarar</option>
-                        <option value="darken">Oscurecer</option>
-                        <option value="difference">Diferencia</option>
-                        <option value="luminosity">Luminosidad</option>
-                        <option value="multiply">Multiplicar</option>
-                    </select>
-        </div>
+                </div>
+                <select class="control-input" id="blend-mode-selector">
+                    <option value="normal">Normal</option>
+                    <option value="lighten">Aclarar</option>
+                    <option value="darken">Oscurecer</option>
+                    <option value="difference">Diferencia</option>
+                    <option value="luminosity">Luminosidad</option>
+                    <option value="multiply">Multiplicar</option>
+                </select>
+            </div>
             <!-- IMAGEN FILTROS -->
-       <div class="image-filters">
-        <h3 class="aside-subtitle">FILTROS</h3>
-            <form id="filters-input-container">
-             <div class="filters-control-range">
-                <label for="brightness-input">BRILLO</label>
-  <input type="range" id="brightness-input" class="range-color" min="0" max="1" step="0.1" value="1">
-</div>
-<div class="filters-control-range">
-    <label for="opacity-input">OPACIDAD</label>
-    <input type="range" id="opacity-input" class="range-color" min="0" max="1" step="0.1" value="1">
-</div>
-<div class="filters-control-range">
-    <label for="contrast-input">CONTRASTE</label>
-    <input type="range" id="contrast-input" class="range-color" min="100" max="1000" step="1" value="100">
-</div>
-<div class="filters-control-range">
-    <label for="blur-input">DESENFOQUE</label>
-    <input type="range" id="blur-input" class="range-color" min="0" max="10" step="0.1" value="0">
-</div>
-<div class="filters-control-range">
-    <label for="grayscale-input">ESCALA DE GRISES</label>
-    <input type="range" id="grayscale-input" class="range-color" min="0" max="100" step="1" value="0">
-</div>
-<div class="filters-control-range">
-    <label for="sepia-input">SEPIA</label>
-    <input type="range" id="sepia-input" class="range-color" min="0" max="100" step="1" value="0">
-</div>
-<div class="filters-control-range">
-    <label for="hue-rotation-input">HUE</label>
-    <input type="range" id="hue-rotation-input" class="range-color" min="0" max="359" step="1" value="0">
-</div>
-<div class="filters-control-range">
-    <label for="saturation-input">SATURADO</label>
-    <input type="range" id="saturation-input" class="range-color" min="100" max="1000" step="10" value="100">
-</div>
-<div class="filters-control-range">
-    <label for="invert-input">NEGATIVO</label>
-    <input type="range" id="invert-input" class="range-color" min="0" max="1" step="0.1" value="1">
-</div>
-<!-- BOTÓN RESTABLECER -->
-<input type="reset" class="reset-button" id="reset-button" value="Restablecer filtros"></input>
-</form>
-       </div>
-       </section>
-       <!-- ASIDE: TEXTO -->
-       <section class="aside-text-section">
-        <button class="close-button hidden" id="close-button-text"><i class="fa-solid fa-xmark"></i></button>
-        <h2>TEXTO</h2>
-        <!-- TEXTO SUPERIOR-->
-       <div>
-        <h3 class="aside-subtitle">SUPERIOR</h3>
-        <div class="text-area-container">
-        <textarea class="top-text-area" id="top-text-area">TOP TEXT</textarea>
-        <div>
-            <input type="checkbox" id="no-top-text">
-            <label for="no-top-text">Sin texto superior</label>
-           </div>
-        </div>
-       </div>
-       <!-- TEXTO INFERIOR -->
-       <div>
-        <h3 class="aside-subtitle">INFERIOR</h3>
-        <div class="text-area-container">
-        <textarea class="bottom-text-area" id="bottom-text-area">BOTTOM TEXT</textarea>
-        <div>
-            <input type="checkbox" id="no-bottom-text">
-            <label for="no-bottom-text">Sin texto inferior</label>
-           </div>
-        </div>
-       </div>
-       <!-- FUENTE TEXTO -->
-       <div>
-        <h3 class="aside-subtitle">FUENTE</h3>
-        <div class="font-container">
-        <select class="control-input" id="font-selector">
-            <option value="Arial, Helvetica, sans-serif">Arial</option>
-            <option value="Arial Black, Gadget, sans-serif">Arial Black</option>
-            <option value="Palatino Linotype, Book Antiqua, Palatino, serif">Palatino Linotype</option>
-            <option value="Tahoma, Geneva, sans-serif">Tahoma</option>
-            <option value="Comic Sans MS, cursive">Comic Sans MS</option>
-            <option value="Georgia, serif">Georgia</option>
-            <option value="Impact, Charcoal, sans-serif" selected>Impact</option>
-            <option value="Verdana, Geneva, Tahoma, sans-serif">Verdana</option>
-            <option value="'Times New Roman', Times, serif">Times New Roman</option>
-        </select>
-          <!-- TAMAÑO DE FUENTE -->
-       <div class="font-size-container is-flex">
-        <div class="font-size">
-      <input type="number" class="control-input" id="font-size" min="12" max="90" value="40">
+            <div class="image-filters">
+                <h3 class="aside-subtitle">FILTROS</h3>
+                <form id="filters-input-container">
+                    <div class="filters-control-range">
+                        <label for="brightness-input">BRILLO</label>
+                        <input type="range" id="brightness-input" class="range-color" min="0" max="1" step="0.1"
+                            value="1">
+                    </div>
+                    <div class="filters-control-range">
+                        <label for="opacity-input">OPACIDAD</label>
+                        <input type="range" id="opacity-input" class="range-color" min="0" max="1" step="0.1" value="1">
+                    </div>
+                    <div class="filters-control-range">
+                        <label for="contrast-input">CONTRASTE</label>
+                        <input type="range" id="contrast-input" class="range-color" min="100" max="1000" step="1"
+                            value="100">
+                    </div>
+                    <div class="filters-control-range">
+                        <label for="blur-input">DESENFOQUE</label>
+                        <input type="range" id="blur-input" class="range-color" min="0" max="10" step="0.1" value="0">
+                    </div>
+                    <div class="filters-control-range">
+                        <label for="grayscale-input">ESCALA DE GRISES</label>
+                        <input type="range" id="grayscale-input" class="range-color" min="0" max="100" step="1"
+                            value="0">
+                    </div>
+                    <div class="filters-control-range">
+                        <label for="sepia-input">SEPIA</label>
+                        <input type="range" id="sepia-input" class="range-color" min="0" max="100" step="1" value="0">
+                    </div>
+                    <div class="filters-control-range">
+                        <label for="hue-rotation-input">HUE</label>
+                        <input type="range" id="hue-rotation-input" class="range-color" min="0" max="359" step="1"
+                            value="0">
+                    </div>
+                    <div class="filters-control-range">
+                        <label for="saturation-input">SATURADO</label>
+                        <input type="range" id="saturation-input" class="range-color" min="100" max="1000" step="10"
+                            value="100">
+                    </div>
+                    <div class="filters-control-range">
+                        <label for="invert-input">NEGATIVO</label>
+                        <input type="range" id="invert-input" class="range-color" min="0" max="1" step="0.1" value="1">
+                    </div>
+                    <!-- BOTÓN RESTABLECER -->
+                    <input type="reset" class="reset-button" id="reset-button" value="Restablecer filtros"></input>
+                </form>
+            </div>
+        </section>
+        <!-- ASIDE: TEXTO -->
+        <section class="aside-text-section">
+            <button class="close-button hidden" id="close-button-text"><i class="fa-solid fa-xmark"></i></button>
+            <h2>TEXTO</h2>
+            <!-- TEXTO SUPERIOR-->
+            <div>
+                <h3 class="aside-subtitle">SUPERIOR</h3>
+                <div class="text-area-container">
+                    <textarea class="top-text-area" id="top-text-area">TOP TEXT</textarea>
+                    <div>
+                        <input type="checkbox" id="no-top-text">
+                        <label for="no-top-text">Sin texto superior</label>
+                    </div>
+                </div>
+            </div>
+            <!-- TEXTO INFERIOR -->
+            <div>
+                <h3 class="aside-subtitle">INFERIOR</h3>
+                <div class="text-area-container">
+                    <textarea class="bottom-text-area" id="bottom-text-area">BOTTOM TEXT</textarea>
+                    <div>
+                        <input type="checkbox" id="no-bottom-text">
+                        <label for="no-bottom-text">Sin texto inferior</label>
+                    </div>
+                </div>
+            </div>
+            <!-- FUENTE TEXTO -->
+            <div>
+                <h3 class="aside-subtitle">FUENTE</h3>
+                <div class="font-container">
+                    <select class="control-input" id="font-selector">
+                        <option value="Arial, Helvetica, sans-serif">Arial</option>
+                        <option value="Arial Black, Gadget, sans-serif">Arial Black</option>
+                        <option value="Palatino Linotype, Book Antiqua, Palatino, serif">Palatino Linotype</option>
+                        <option value="Tahoma, Geneva, sans-serif">Tahoma</option>
+                        <option value="Comic Sans MS, cursive">Comic Sans MS</option>
+                        <option value="Georgia, serif">Georgia</option>
+                        <option value="Impact, Charcoal, sans-serif" selected>Impact</option>
+                        <option value="Verdana, Geneva, Tahoma, sans-serif">Verdana</option>
+                        <option value="'Times New Roman', Times, serif">Times New Roman</option>
+                    </select>
+                    <!-- TAMAÑO DE FUENTE -->
+                    <div class="font-size-container is-flex">
+                        <div class="font-size">
+                            <input type="number" class="control-input" id="font-size" min="12" max="90" value="40">
+                        </div>
+                        <!-- ALINEACIÓN DE TEXTO -->
+                        <div class="font-alignment">
+                            <button class="control-input" id="text-align-left-button"><i
+                                    class="fa-solid fa-align-left"></i></button>
+                            <button class="control-input" id="text-align-center-button"><i
+                                    class="fa-solid fa-align-center"></i></button>
+                            <button class="control-input" id="text-align-right-button"><i
+                                    class="fa-solid fa-align-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- COLOR -->
+            <div class="is-flex">
+                <!-- COLOR DE TEXTO -->
+                <div>
+                    <h3 class="aside-subtitle">COLOR</h3>
+                    <div class="text-color is-flex" id="text-color">
+                        <input type="color" class="control-input color-input" id="font-color" value="#000000">
+                        <span class="text-color-value" id="font-color-value" aria-hidden="">#000000</span>
+                    </div>
+                </div>
+                <!-- COLOR DE FONDO -->
+                <div>
+                    <h3 class="aside-subtitle">FONDO</h3>
+                    <div class="text-color is-flex" id="text-background-color">
+                        <input type="color" class="control-input color-input" id="font-background-color"
+                            value="#FFFFFF">
+                        <span class="text-color-value" id="font-background-color-value" aria-hidden="">#FFFFFF</span>
+                    </div>
+                </div>
+            </div>
+            <div class="transparent-background">
+                <input type="checkbox" id="transparent-background">
+                <label for="transparent-background">Fondo transparente</label>
+            </div>
+            <!-- CONTORNO -->
+            <div>
+                <h3 class="aside-subtitle">CONTORNO</h3>
+                <div class="outline-container">
+                    <button class="control-input outline-input" id="no-outline-button">Ninguno</button>
+                    <button class="control-input outline-input" id="light-outline-button">Claro</button>
+                    <button class="control-input outline-input" id="dark-outline-button">Oscuro</button>
+                </div>
+            </div>
+            <!-- ESPACIADO -->
+            <div>
+                <h3 class="aside-subtitle">ESPACIADO</h3>
+                <input type="number" class="control-input padding-input" id="padding-input" min="12" max="50"
+                    value="35">
+            </div>
+            <!-- INTERLINEADO -->
+            <div>
+                <h3 class="aside-subtitle">INTERLINEADO</h3>
+                <select class="control-input line-height-selector" id="line-height-selector" aria-label="">
+                    <option value="0.8" selected>0.8</option>
+                    <option value="1">1</option>
+                    <option value="1.2">1.2</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
+                </select>
+            </div>
+        </section>
+    </aside>
+    <!--FIN de ASIDE(s)-->
+    <!-- Botón DESCARGA -->
+    <div class="download-container is-flex">
+        <button class="download-button" id="download-button"><i class="fa-solid fa-download"></i>Descargar
+            meme</button>
     </div>
-       <!-- ALINEACIÓN DE TEXTO -->
-       <div class="font-alignment">
-         <button class="control-input" id="text-align-left-button"><i class="fa-solid fa-align-left"></i></button>
-         <button class="control-input" id="text-align-center-button"><i class="fa-solid fa-align-center"></i></button>
-         <button class="control-input" id="text-align-right-button"><i class="fa-solid fa-align-right"></i></button>
-       </div>
-       </div>
-    </div>
-    </div>
-    <!-- COLOR -->
-    <div class="is-flex">
-          <!-- COLOR DE TEXTO -->
-        <div>
-            <h3 class="aside-subtitle">COLOR</h3>
-            <div class="text-color is-flex" id="text-color">
-                  <input type="color" class="control-input color-input" id="font-color" value="#000000">
-                  <span class="text-color-value" id="font-color-value" aria-hidden="">#000000</span>
-        </div>
-        </div>
-        <!-- COLOR DE FONDO -->
-        <div>
-         <h3 class="aside-subtitle">FONDO</h3>
-         <div class="text-color is-flex" id="text-background-color">
-            <input type="color" class="control-input color-input" id="font-background-color" value="#FFFFFF">
-            <span class="text-color-value" id="font-background-color-value" aria-hidden="">#FFFFFF</span>
-        </div>  
-        </div>
-    </div>
-    <div class="transparent-background">
-        <input type="checkbox" id="transparent-background">
-        <label for="transparent-background">Fondo transparente</label>
-       </div>
-    <!-- CONTORNO -->
-    <div>
-    <h3 class="aside-subtitle">CONTORNO</h3>
-    <div class="outline-container">
-        <button class="control-input outline-input" id="no-outline-button">Ninguno</button>
-        <button class="control-input outline-input" id="light-outline-button">Claro</button>
-        <button class="control-input outline-input" id="dark-outline-button">Oscuro</button>
-    </div>
-    </div>
-    <!-- ESPACIADO -->
-    <div>
-        <h3 class="aside-subtitle">ESPACIADO</h3>
-        <input type="number" class="control-input padding-input" id="padding-input" min="12" max="50" value="35">
-    </div>
-    <!-- INTERLINEADO -->
-    <div>
- <h3 class="aside-subtitle">INTERLINEADO</h3>
- <select class="control-input line-height-selector" id="line-height-selector" aria-label="">
-    <option value="0.8" selected>0.8</option>
-    <option value="1">1</option>
-    <option value="1.2">1.2</option>
-    <option value="1.5">1.5</option>
-    <option value="2">2</option>
-    <option value="2.5">2.5</option>
- </select>
-    </div>
-       </section>
-        </aside>
-        <!--FIN de ASIDE(s)-->
-        <!-- Botón DESCARGA -->
-        <div class="download-container is-flex">
-    <button class="download-button" id="download-button"><i class="fa-solid fa-download"></i>Descargar meme</button>
-</div>
     <script src="script.js"></script>
 </body>
 </html>
