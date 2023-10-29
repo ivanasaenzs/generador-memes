@@ -1,10 +1,29 @@
+:root {
+  --background-primary: #30343f;
+  --background-secondary: #252935;
+  --background-tertiary: #393e49;
+  --header-buttons-background: #191e2b;
+  --font-color-primary: #fff;
+  --font-color-secondary: #e7e7e7;
+}
+
+[data-theme="light-theme"] {
+  --background-primary: #e5c29e;
+  --background-secondary: #e7bc91;
+  --background-tertiary: #f0d6bc;
+  --header-buttons-background: #d4a276;
+  --font-color-primary: #7f5539;
+  --font-color-secondary: ;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
 body {
-  background-color: #30343f;
+  background-color: var(--background-primary);
   font-family: "Open Sans", sans-serif;
 }
 
@@ -18,15 +37,14 @@ body {
 
 .control-input,
 .text-button {
-  background-color: #393e49;
-  color: #fff;
+  background-color: var(--background-tertiary);
+  color: var(--font-color-primary);
   border: none;
 }
 
-/* MODO OSCURO  */
 .header-title {
-  background-color: #191e2b;
-  color: #fff;
+  background-color: var(--header-buttons-background);
+  color: var(--font-color-primary);
   font-weight: 600;
   font-size: 35px;
   text-align: center;
@@ -34,7 +52,7 @@ body {
 }
 
 .buttons-container {
-  background-color: #191e2b;
+  background-color: var(--header-buttons-background);
   justify-content: center;
   flex-wrap: wrap;
   padding-top: 18px;
@@ -42,7 +60,7 @@ body {
 }
 
 .buttons-container button {
-  color: #fff;
+  color: var(--font-color-primary);
   margin-right: 12px;
   background: none;
   border: none;
@@ -51,7 +69,7 @@ body {
 .fa-file-image,
 .fa-font,
 .fa-lightbulb {
-  color: #fff;
+  color: var(--font-color-primary);
   margin-right: 4px;
 }
 
@@ -121,8 +139,8 @@ label {
 }
 
 .aside-image-section {
-  background-color: #252935;
-  color: #fff;
+  background-color: var(--background-secondary);
+  color: var(--font-color-primary);
   position: absolute;
   top: 0;
   right: 0;
@@ -168,7 +186,7 @@ h3,
 }
 
 .meme-color {
-  background-color: #393e49;
+  background-color: var(--background-tertiary);
   margin-left: 8px;
   margin-right: 10px;
   border-radius: 3px;
@@ -176,8 +194,8 @@ h3,
 }
 
 .reset-button {
-  background-color: #393e49;
-  color: #fff;
+  background-color: var(--background-tertiary);
+  color: var(--font-color-primary);
   border: none;
   border-radius: 3px;
   margin-top: 16px;
@@ -194,8 +212,8 @@ h3,
 }
 
 .aside-text-section {
-  background-color: #252935;
-  color: #fff;
+  background-color: var(--background-secondary);
+  color: var(--font-color-primary);
   position: absolute;
   top: 0;
   right: 0;
@@ -213,19 +231,19 @@ h3,
 }
 
 .top-text {
-  background-color: #393e49;
-  color: #fff;
+  background-color: var(--background-tertiary);
+  color: var(--font-color-primary);
   border: none;
 }
 
 .bottom-text {
-  background-color: #393e49;
-  color: #fff;
+  background-color: var(--background-tertiary);
+  color: var(--font-color-primary);
   border: none;
 }
 
 .text-color {
-  background-color: #393e49;
+  background-color: var(--background-tertiary);
   margin-left: 10px;
   margin-right: 6px;
   border-radius: 3px;
@@ -253,7 +271,7 @@ h3,
 
 .download-button {
   background-color: #2e7d32;
-  color: #fff;
+  color: var(--font-color-primary);
   margin-top: 25px;
   margin-bottom: 25px;
   border: none;
@@ -263,95 +281,6 @@ h3,
 
 .fa-download {
   margin-right: 8px;
-}
-
-/* MODO CLARO */
-.header-title-light {
-  background-color: #d4a276;
-  color: #7f5539;
-  text-align: center;
-  padding-top: 10px;
-}
-
-.buttons-container-light {
-  background-color: #d4a276;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding-top: 18px;
-  padding-bottom: 15px;
-}
-
-.buttons-container-light button {
-  color: #7f5539;
-  margin-right: 12px;
-  background: none;
-  border: none;
-}
-
-.aside-image-section-light {
-  background-color: #e7bc91;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 250px;
-  height: 100vh;
-}
-
-.reset-button-light {
-  background-color: #ffedd8;
-  color: #000;
-  border: none;
-  border-radius: 3px;
-  margin-left: 8px;
-  margin-top: 16px;
-  padding: 12px;
-}
-
-.aside-text-section-light {
-  background-color: #e7bc91;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 240px;
-  z-index: -1;
-  height: 100vh;
-}
-
-.top-text-light {
-  background-color: #ffedd8;
-  color: #000;
-  border: none;
-}
-
-.bottom-text-light {
-  background-color: #ffedd8;
-  color: #000;
-  border: none;
-}
-
-.control-input-light,
-.text-button-light {
-  background-color: #ffedd8;
-  color: #000;
-  border: none;
-}
-
-.meme-color-light {
-  background-color: #ffedd8;
-  margin-left: 8px;
-  margin-right: 10px;
-  border-radius: 3px;
-  align-items: center;
-}
-
-.text-color-light {
-  background-color: #ffedd8;
-  border-radius: 3px;
-  margin-left: 10px;
-  margin-right: 6px;
-  border-radius: 3px;
-  align-items: center;
 }
 
 /* RESPONSIVE */
