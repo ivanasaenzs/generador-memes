@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +12,14 @@
         integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Generador de Memes</title>
+    <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/085ccf50a5.js" crossorigin="anonymous"></script>
+    <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <h1 class="header-title">Generador de Memes</h1>
@@ -26,10 +30,12 @@
             <button id="text-section-button"><i class="fa-solid fa-font"></i>
                 Texto
             </button>
-            <button id="light-mode-button"><i class="fa-regular fa-lightbulb"></i>
+            <button id="light-theme-button">
+                <i class="fas fa-lightbulb lightbulb-off"></i>
                 Modo claro
             </button>
-            <button class="hidden" id="dark-mode-button"><i class="fa-regular fa-lightbulb"></i>
+            <button class="hidden" id="dark-theme-button">
+                <i class="far fa-lightbulb lightbulb-on"></i>
                 Modo oscuro
             </button>
         </div>
@@ -192,7 +198,7 @@
                 <div>
                     <h3 class="aside-subtitle">FONDO</h3>
                     <div class="text-color is-flex" id="text-background-color">
-                        <input type="color" class="control-input color-input" id="font-background-color"
+                        <input type="color" class="control-input color-input" id="font-background-color-input"
                             value="#FFFFFF">
                         <span class="text-color-value" id="font-background-color-value" aria-hidden="">#FFFFFF</span>
                     </div>
@@ -234,9 +240,12 @@
     <!--FIN de ASIDE(s)-->
     <!-- Botón DESCARGA -->
     <div class="download-container is-flex">
-        <button class="download-button" id="download-button"><i class="fa-solid fa-download"></i>Descargar
-            meme</button>
+        <button class="download-button" id="download-button">
+            <i class="fa-solid fa-download"></i>
+            Descargar meme
+        </button>
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
