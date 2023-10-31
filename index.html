@@ -24,17 +24,17 @@
     <header>
         <h1 class="header-title">Generador de Memes</h1>
         <div class="buttons-container is-flex">
-            <button id="image-section-button"><i class="fa-solid fa-file-image"></i>
+            <button class="c-pointer" id="image-section-button"><i class="fa-solid fa-file-image"></i>
                 Imagen
             </button>
-            <button id="text-section-button"><i class="fa-solid fa-font"></i>
+            <button class="c-pointer" id="text-section-button"><i class="fa-solid fa-font"></i>
                 Texto
             </button>
-            <button id="light-theme-button">
+            <button class="c-pointer" id="light-theme-button">
                 <i class="fas fa-lightbulb lightbulb-off"></i>
                 Modo claro
             </button>
-            <button class="hidden" id="dark-theme-button">
+            <button class="hidden c-pointer" id="dark-theme-button">
                 <i class="far fa-lightbulb lightbulb-on"></i>
                 Modo oscuro
             </button>
@@ -50,8 +50,8 @@
     <!-- COMIENZO de ASIDE(s)-->
     <aside>
         <!-- ASIDE: IMAGEN-->
-        <section class="aside-image-section">
-            <button class="close-button" id="close-button-image"><i class="fa-solid fa-xmark"></i></button>
+        <section class="aside-image-section" id="aside-image-section">
+            <button class="close-button c-pointer" id="close-image-section"><i class="fa-solid fa-xmark"></i></button>
             <h2>IMAGEN</h2>
             <!-- IMAGEN URL -->
             <div class="image-url-container">
@@ -120,13 +120,14 @@
                         <input type="range" id="invert-input" class="range-color" min="0" max="1" step="0.1" value="0">
                     </div>
                     <!-- BOTÓN RESTABLECER -->
-                    <input type="reset" class="reset-button" id="reset-button" value="Restablecer filtros"></input>
+                    <input type="reset" class="reset-button c-pointer" id="reset-button"
+                        value="Restablecer filtros"></input>
                 </form>
             </div>
         </section>
         <!-- ASIDE: TEXTO -->
-        <section class="aside-text-section">
-            <button class="close-button" id="close-button-text"><i class="fa-solid fa-xmark"></i></button>
+        <section class="aside-text-section" id="aside-text-section">
+            <button class="close-button c-pointer" id="close-text-section"><i class="fa-solid fa-xmark"></i></button>
             <h2>TEXTO</h2>
             <!-- TEXTO SUPERIOR-->
             <div>
@@ -173,11 +174,14 @@
                         <!-- ALINEACIÓN DE TEXTO -->
                         <div class="font-alignment">
                             <button class="control-input" id="text-align-left-button"><i
-                                    class="fa-solid fa-align-left"></i></button>
-                            <button class="control-input" id="text-align-center-button"><i
-                                    class="fa-solid fa-align-center"></i></button>
-                            <button class="control-input" id="text-align-right-button"><i
-                                    class="fa-solid fa-align-right"></i></button>
+                                    class="fa-solid fa-align-left c-pointer"></i>
+                            </button>
+                            <button class="control-input c-pointer" id="text-align-center-button"><i
+                                    class="fa-solid fa-align-center"></i>
+                            </button>
+                            <button class="control-input c-pointer" id="text-align-right-button"><i
+                                    class="fa-solid fa-align-right"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -210,9 +214,9 @@
             <div>
                 <h3 class="aside-subtitle">CONTORNO</h3>
                 <div class="outline-container">
-                    <button class="control-input outline-input" id="no-outline-button">Ninguno</button>
-                    <button class="control-input outline-input" id="light-outline-button">Claro</button>
-                    <button class="control-input outline-input" id="dark-outline-button">Oscuro</button>
+                    <button class="control-input outline-input c-pointer" id="no-outline-button">Ninguno</button>
+                    <button class="control-input outline-input c-pointer" id="light-outline-button">Claro</button>
+                    <button class="control-input outline-input c-pointer" id="dark-outline-button">Oscuro</button>
                 </div>
             </div>
             <!-- ESPACIADO -->
