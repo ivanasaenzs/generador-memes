@@ -74,41 +74,28 @@ body {
 }
 
 /* MEME  */
-.main-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .meme-container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 610px;
-  height: 610px;
+  margin: 0 auto;
+  max-width: 600px;
+  overflow: hidden;
   background-color: #000;
   text-align: center;
 }
 
-.text-container {
+.meme-text {
   font-size: 40px;
   background-color: #fff;
   color: #000;
-  padding: 10px;
   width: 100%;
-  max-width: 100%;
+  margin: 0;
 }
 
 .meme-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
+  max-width: 100%;
+  height: 500px;
   background-size: cover;
-  background-repeat: "no-repeat";
-  background-position: "center";
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* ASIDE(s) */
@@ -136,6 +123,7 @@ label {
   border: none;
   font-size: 15px;
   text-align: center;
+  visibility: hidden;
 }
 
 .aside-image-section {
@@ -296,16 +284,22 @@ h3,
   }
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 700px) {
   .aside-image-section,
   .aside-text-section {
+    width: 100%;
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  main {
     display: none;
   }
 }
 
-@media (min-width: 1280px) {
-  .aside-image-section,
-  .aside-text-section {
-    display: block;
+@media (max-width: 1284px) {
+  .close-button {
+    visibility: visible;
   }
 }
