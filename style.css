@@ -35,6 +35,10 @@ body {
   display: none;
 }
 
+.c-pointer {
+  cursor: pointer;
+}
+
 .control-input,
 .text-button {
   background-color: var(--background-tertiary);
@@ -119,7 +123,6 @@ label {
 }
 
 .close-button {
-  cursor: pointer;
   background: none;
   border: none;
   font-size: 18px;
@@ -127,6 +130,7 @@ label {
   position: absolute;
   right: 0;
   margin-right: 18px;
+  color: var(--font-color-primary);
 }
 
 .aside-image-section {
@@ -137,6 +141,7 @@ label {
   right: 0;
   width: 250px;
   height: 100vh;
+  z-index: 1;
 }
 
 .image-url-container {
@@ -210,7 +215,6 @@ h3,
   right: 0;
   width: 250px;
   height: 100vh;
-  z-index: -1;
 }
 
 .text-area-container,
@@ -293,12 +297,6 @@ h3,
   .aside-text-section {
     width: 100%;
     min-width: 100%;
-  }
-}
-
-@media (max-width: 700px) {
-  main {
-    display: none;
   }
 }
 
