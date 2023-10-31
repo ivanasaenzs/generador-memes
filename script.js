@@ -18,9 +18,7 @@ $("#light-theme-button").addEventListener("click", () => {
 
 // IMAGEN MEME
 $("#url-input").addEventListener("input", () => {
-  $("#meme-container").style.backgroundImage = `url('${
-    $("#url-input").value
-  }')`;
+  $("#meme-image").style.backgroundImage = `url('${$("#url-input").value}')`;
 });
 
 // MEME TEXT
@@ -53,15 +51,14 @@ $("#color-input").addEventListener("input", () => {
 // Mostrar el valor del input color
 $("#color-input").addEventListener("input", () => {
   let displayColorValue = $("#color-input").value.toUpperCase();
-  $("image-color-value").innerHTML = `<p>${displayColorValue}</p>`;
+  $("#image-color-value").innerHTML = `<p>${displayColorValue}</p>`;
 });
 
 // Blend mode select
-$("#blend-mode-selector").addEventListener("change", () => {
-  const selectedOption = $("#blend-mode-selector").value;
-  $("#meme-container").style.backgroundBlendMode = `${selectedOption}`;
+$("#mix-blend-mode").addEventListener("change", () => {
+  const selectedOption = $("#mix-blend-mode").value;
+  $("#meme-image").style.mixBlendMode = selectedOption;
 });
-// no pude lograr que los filtros se apliquen solo a la imagen, me rindo
 
 // Filtros
 const applyFilters = () => {
@@ -77,7 +74,7 @@ const applyFilters = () => {
   const invertValue = $("#invert-input").value;
 
   // le aplico los filtros al elemento
-  $("#meme-container").style.filter = `
+  $("#meme-image").style.filter = `
     brightness(${brightnessValue})
     opacity(${opacityValue})
     contrast(${contrastValue}%)
@@ -91,33 +88,29 @@ const applyFilters = () => {
 };
 
 // los event listeners para cada input range
-$("#brightness-input").addEventListener("input", () => applyFilters());
-$("#opacity-input").addEventListener("input", () => applyFilters());
-$("#contrast-input").addEventListener("input", () => applyFilters());
-$("#blur-input").addEventListener("input", () => applyFilters());
-$("#grayscale-input").addEventListener("input", () => applyFilters());
-$("#sepia-input").addEventListener("input", () => applyFilters());
-$("#hue-rotation-input").addEventListener("input", () => applyFilters());
-$("#saturation-input").addEventListener("input", () => applyFilters());
-$("#invert-input").addEventListener("input", () => applyFilters());
+$("#brightness-input").addEventListener("input", applyFilters);
+$("#opacity-input").addEventListener("input", applyFilters);
+$("#contrast-input").addEventListener("input", applyFilters);
+$("#blur-input").addEventListener("input", applyFilters);
+$("#grayscale-input").addEventListener("input", applyFilters);
+$("#sepia-input").addEventListener("input", applyFilters);
+$("#hue-rotation-input").addEventListener("input", applyFilters);
+$("#saturation-input").addEventListener("input", applyFilters);
+$("#invert-input").addEventListener("input", applyFilters);
 
 // Botón RESET
-const resetFilters = () => {
-  // reseteo el valor de los filtros al default
-  brightnessValue = 1;
-  opacityValue = 1;
-  contrastValue = 100;
-  blurValue = 0;
-  grayscaleValue = 0;
-  sepiaValue = 0;
-  hueRotationValue = 0;
-  saturationValue = 100;
-  invertValue = 0;
-  // llamo a la función applyFilters para que vuelvan al valor inicial
-  applyFilters();
-};
-
-$("#reset-button").addEventListener("click", () => resetFilters());
+$("#reset-button").addEventListener("click", () => {
+  $("#brightness-input").value = "1";
+  $("#opacity-input").value = "1";
+  $("#contrast-input").value = "100";
+  $("#blur-input").value = "0";
+  $("#grayscale-input").value = "0";
+  $("#sepia-input").value = "0";
+  $("#hue-rotation-input").value = "0";
+  $("#saturation-input").value = "100";
+  $("#invert-input").value = "0";
+  $("#meme-image").style.filter = "none";
+});
 
 // ASIDE TEXTO
 // Checkboxes: sin texto superior/inferior
@@ -166,40 +159,33 @@ $("#text-align-right-button").addEventListener("click", () => {
 });
 
 // Color de fuente
-const fontColorInput = document.getElementById("font-color");
-const fontColorValue = document.getElementById("font-color-value");
-
-fontColorInput.addEventListener("input", () => {
-  $("#top-text-meme").style.color = `${fontColorInput.value}`;
-  $("#bottom-text-meme").style.color = `${fontColorInput.value}`;
+$("#font-color").addEventListener("input", () => {
+  $("#top-text-meme").style.color = `${$("#font-color").value}`;
+  $("#bottom-text-meme").style.color = `${$("#font-color").value}`;
 });
 
-fontColorInput.addEventListener("input", () => {
-  let displayFontColorValue = fontColorInput.value.toUpperCase();
-  fontColorValue.innerHTML = `<p>${displayFontColorValue}</p>`;
+$("#font-color").addEventListener("input", () => {
+  let displayFontColorValue = $("#font-color").value.toUpperCase();
+  $("#font-color-value").innerHTML = `<p>${displayFontColorValue}</p>`;
 });
 
 // Color del fondo del texto
-const fontBackgroundColorInput = document.getElementById(
-  "font-background-color"
-);
-const fontBackgroundColorValue = document.getElementById(
-  "font-background-color-value"
-);
-
-fontBackgroundColorInput.addEventListener("input", () => {
-  $(
-    "#top-text-meme"
-  ).style.backgroundColor = `${fontBackgroundColorInput.value}`;
-  $(
-    "#bottom-text-meme"
-  ).style.backgroundColor = `${fontBackgroundColorInput.value}`;
+$("#font-background-color-input").addEventListener("input", () => {
+  $("#top-text-meme").style.backgroundColor = `${
+    $("#font-background-color-input").value
+  }`;
+  $("#bottom-text-meme").style.backgroundColor = `${
+    $("#font-background-color-input").value
+  }`;
 });
 
-fontBackgroundColorInput.addEventListener("input", () => {
-  let displayFontBackgroundColorValue =
-    fontBackgroundColorInput.value.toUpperCase();
-  fontBackgroundColorValue.innerHTML = `<p>${displayFontBackgroundColorValue}</p>`;
+$("#font-background-color-input").addEventListener("input", () => {
+  let displayFontBackgroundColorValue = $(
+    "#font-background-color-input"
+  ).value.toUpperCase();
+  $(
+    "#font-background-color-value"
+  ).innerHTML = `<p>${displayFontBackgroundColorValue}</p>`;
 });
 
 // Checkbox fondo transparente
