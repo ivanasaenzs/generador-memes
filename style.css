@@ -119,11 +119,14 @@ label {
 }
 
 .close-button {
+  cursor: pointer;
   background: none;
   border: none;
-  font-size: 15px;
-  text-align: center;
+  font-size: 18px;
   visibility: hidden;
+  position: absolute;
+  right: 0;
+  margin-right: 18px;
 }
 
 .aside-image-section {
@@ -272,6 +275,7 @@ h3,
 }
 
 /* RESPONSIVE */
+
 @media (max-width: 768px) {
   .download-button {
     display: block;
@@ -298,7 +302,7 @@ h3,
   }
 }
 
-@media (max-width: 1284px) {
+@media (max-width: 1280px) {
   .close-button {
     visibility: visible;
   }
