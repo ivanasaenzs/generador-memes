@@ -48,6 +48,17 @@ $("#color-input").addEventListener("input", () => {
   $("#meme-container").style.backgroundColor = `${$("#color-input").value}`;
 });
 
+// CERRAR ASIDES
+$("#close-text-section").addEventListener("click", () => {
+  $("#aside-text-section").style.display = "none";
+  $("#aside-image-section").style.display = "none";
+});
+
+$("#close-image-section").addEventListener("click", () => {
+  $("#aside-image-section").style.display = "none";
+  $("#aside-text-section").style.display = "none";
+});
+
 // Mostrar el valor del input color
 $("#color-input").addEventListener("input", () => {
   let displayColorValue = $("#color-input").value.toUpperCase();
@@ -207,6 +218,7 @@ $("#transparent-background").addEventListener("change", () =>
 $("#no-outline-button").addEventListener("click", () => {
   $("#top-text-meme").style.textShadow = "none";
   $("#bottom-text-meme").style.textShadow = "none";
+  console.log($("#no-outline-button"));
 });
 
 $("#light-outline-button").addEventListener("click", () => {
@@ -231,10 +243,11 @@ $("#padding-input").addEventListener("input", () => {
 });
 
 // Input Interlineado
-$("#line-height-selector").addEventListener("input", () => {
+$("#line-height-selector").addEventListener("change", () => {
   let lineHeightValue = $("#line-height-selector").value;
-  $("#top-text-meme").style.lineHeight = `${lineHeightValue}` + `px`;
-  $("#bottom-text-meme").style.lineHeight = `${lineHeightValue}` + `px`;
+  console.log(lineHeightValue);
+  $("#top-text-meme").style.lineHeight = `${lineHeightValue}px`;
+  $("#bottom-text-meme").style.lineHeight = `${lineHeightValue}px`;
 });
 
 // BOTÓN DE DESCARGA
