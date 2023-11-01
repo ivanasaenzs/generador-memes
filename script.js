@@ -43,9 +43,11 @@ $("#text-section-button").addEventListener("click", () => {
 });
 
 // ASIDE IMAGE
-// COLOR DE FONDO DEL MEME
+// COLOR DE FONDO DEL MEME - Mostrar el valor del input color
 $("#color-input").addEventListener("input", () => {
   $("#meme-container").style.backgroundColor = `${$("#color-input").value}`;
+  let displayColorValue = $("#color-input").value.toUpperCase();
+  $("#image-color-value").innerHTML = `<p>${displayColorValue}</p>`;
 });
 
 // CERRAR ASIDES
@@ -57,12 +59,6 @@ $("#close-text-section").addEventListener("click", () => {
 $("#close-image-section").addEventListener("click", () => {
   $("#aside-image-section").style.display = "none";
   $("#aside-text-section").style.display = "none";
-});
-
-// Mostrar el valor del input color
-$("#color-input").addEventListener("input", () => {
-  let displayColorValue = $("#color-input").value.toUpperCase();
-  $("#image-color-value").innerHTML = `<p>${displayColorValue}</p>`;
 });
 
 // Blend mode select
@@ -169,18 +165,15 @@ $("#text-align-right-button").addEventListener("click", () => {
   $("#bottom-text-meme").style.textAlign = "right";
 });
 
-// Color de fuente
+// Color de fuente - Visualización del valor del input
 $("#font-color").addEventListener("input", () => {
   $("#top-text-meme").style.color = `${$("#font-color").value}`;
   $("#bottom-text-meme").style.color = `${$("#font-color").value}`;
-});
-
-$("#font-color").addEventListener("input", () => {
   let displayFontColorValue = $("#font-color").value.toUpperCase();
   $("#font-color-value").innerHTML = `<p>${displayFontColorValue}</p>`;
 });
 
-// Color del fondo del texto
+// Color del fondo del texto - Visualización del valor del input
 $("#font-background-color-input").addEventListener("input", () => {
   $("#top-text-meme").style.backgroundColor = `${
     $("#font-background-color-input").value
@@ -188,9 +181,6 @@ $("#font-background-color-input").addEventListener("input", () => {
   $("#bottom-text-meme").style.backgroundColor = `${
     $("#font-background-color-input").value
   }`;
-});
-
-$("#font-background-color-input").addEventListener("input", () => {
   let displayFontBackgroundColorValue = $(
     "#font-background-color-input"
   ).value.toUpperCase();
@@ -218,7 +208,6 @@ $("#transparent-background").addEventListener("change", () =>
 $("#no-outline-button").addEventListener("click", () => {
   $("#top-text-meme").style.textShadow = "none";
   $("#bottom-text-meme").style.textShadow = "none";
-  console.log($("#no-outline-button"));
 });
 
 $("#light-outline-button").addEventListener("click", () => {
@@ -245,7 +234,6 @@ $("#padding-input").addEventListener("input", () => {
 // Input Interlineado
 $("#line-height-selector").addEventListener("change", () => {
   let lineHeightValue = $("#line-height-selector").value;
-  console.log(lineHeightValue);
   $("#top-text-meme").style.lineHeight = `${lineHeightValue}px`;
   $("#bottom-text-meme").style.lineHeight = `${lineHeightValue}px`;
 });
